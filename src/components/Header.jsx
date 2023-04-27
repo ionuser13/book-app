@@ -13,8 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import HomeIcon from '@mui/icons-material/Home';
 
-const pages = ['Authors', 'Genres'];
-const settings = ['Mail', 'GitHub', 'LinkedIn'];
+const pages = ['authors', 'genres'];
+const settings = [['Mail', 'mailto:chacpijohn83@gmail.com'], ['GitHub', 'https://github.com/ionuser13'], ['LinkedIn', 'https://www.linkedin.com/in/john-chacpi/?locale=en_US']];
 
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -41,24 +41,24 @@ const Header = () => {
       }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters="true">
-            <HomeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 3,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-            >
-              BOOKFINDERX
-            </Typography>
+                <HomeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
+                sx={{
+                    mr: 3,
+                    display: { xs: 'none', md: 'flex' },
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                }}
+                >
+                BOOKFINDERX
+                </Typography>
   
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
@@ -91,7 +91,9 @@ const Header = () => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textAlign="center">
+                        <a href={page}>{page}</a>
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -122,7 +124,7 @@ const Header = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  {page}
+                  <a href={page}>{page}</a>
                 </Button>
               ))}
             </Box>
@@ -150,8 +152,10 @@ const Header = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                  <MenuItem key={setting[0]} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">
+                        <a href={setting[1]} target='_blank'>{setting[0]}</a>
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
