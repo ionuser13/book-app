@@ -7,9 +7,9 @@ import BooksTable from '@/components/Books/BooksTable';
 const Books = () => {
   return (
     <div>
-      <Container sx={{display: 'flex', flexDirection: 'column', gap: 8}}>
+      <Container sx={{display: 'flex', flexDirection: 'column', gap: 8, marginY: 8}}>
         <SearchBar list={top100Films}></SearchBar>
-        <BooksTable></BooksTable>
+        <BooksTable />
       </Container>
     </div>
   )

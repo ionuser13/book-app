@@ -3,7 +3,7 @@ import { Container, Typography } from "@mui/material";
 
 const Main = () => {
   return (
-    <div className="w-full h-[30vh] relative mb-8 sm:h-[70vh] mt-10">
+    <div className="w-full h-[30vh] relative mt-8 sm:h-[70vh]">
       <div className="w-full h-full titleBackground -z-10 absolute bg-fixed"></div>
       <Container
         className="h-full backdrop-blur-sm"
