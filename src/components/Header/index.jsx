@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import HomeIcon from "@mui/icons-material/Home";
 
-const pages = ["authors", "genres"];
+const pages = ["Authors", "Genres"];
 const settings = [
   ["Mail", "mailto:chacpijohn83@gmail.com"],
   ["GitHub", "https://github.com/ionuser13"],
@@ -47,7 +47,7 @@ const Header = () => {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters="true">
+        <Toolbar disableGutters={true}>
           <HomeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -105,7 +105,7 @@ const Header = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            BOOKFINDER
           </Typography>
           <Box
             sx={{

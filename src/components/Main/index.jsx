@@ -3,7 +3,7 @@ import { Container, Typography } from "@mui/material";
 
 const Main = () => {
   return (
-    <div className="w-full h-[70vh] relative">
+    <div className="w-full h-[30vh] relative mb-8 sm:h-[70vh] mt-10">
       <div className="w-full h-full titleBackground -z-10 absolute bg-fixed"></div>
       <Container
         className="h-full backdrop-blur-sm"
@@ -18,13 +18,13 @@ const Main = () => {
             fontFamily: "monospace",
             fontWeight: 700,
             letterSpacing: ".4rem",
-            color: "inherit",
+            color: "white",
             textDecoration: "none",
           }}
         >
           BOOKFINDER
         </Typography>
-        <p>Discover your next favorite read with ease</p>
+        <p className="text-white">Discover your next favorite read with ease</p>
       </Container>
     </div>
   );
