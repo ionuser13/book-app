@@ -1,38 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Approaches taken to build this application
 
-## Getting Started
+## Pre-production stage
 
-First, run the development server:
+The first approach I took in order to start this project was to decide which tools I was going to use depending on the features, layout and data management the app was going to have. To start with, I was given general instructions about the app, so the features were clear: a simple app that searches for books, displays a list of the results and redirects to another page with the details of the selected book. I included Material UI and Tailwind CSS to build the layout, and I went for the Context API for the data management.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+I made a few layout drafts to settle my ideas. I opted for a simple responsive layout as told in the instructions. I included a header from Material UI in all the pages. The main page consist in a presentation section and the search section, which includes the search bar and the list of books in a table from Material UI. After that, I started building the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development stage
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The app was created with create-next-app because of performance and feature reasons. Then, I installed the necessary dependency, Material UI. I chose the App bar with responsive menu component since it solves the need of building a separated mobile menu and keep important links on sight. Then, I built a simple 404 page and the presentation section of the main page. I included both a search bar and a table from Material UI without any logic between them to begin with. To be specific, the only logic was the example code given by Material UI to explain how the components behave. 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+I also changes my initial folder structure in order to have a more organized work environment and to bring a better experience when reading my code to whoever wants to. Aliases were added to make the process of importing components easier. 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+I implemented a request to an API in order to get the data to work with. I used the [Open Library API](https://openlibrary.org/). To be precise, I made two requests: one to show the data in the main page table, and the second to show the details of every book. For this, I used the Context API from React. The API takes a string as a parameter to make the request. So I used the search bar value as the parameter to get the data. With this, I managed to render the data (title, author, publication date and genre) of every book that matched the search from the bar in the table and find a way to make routes. Every book has an id, so this is used as a single route that redirects to the page that renders the books details.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Inside this page, I made the second request to the API. The response is different and more detailed than the previous data given by the previous request. So I built a simple layout to make the data more presentable and easier to read. Each page displays the title, author, description and genres of each book.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I used Vercel's feature to deploy this book app and make it available from anywhere. This is because it's a simple and practical way to deploy projects built in any technology. Here is the [link](https://book-app-alpha-five.vercel.app/).
