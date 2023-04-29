@@ -53,8 +53,7 @@ export default function BooksTable() {
         id: (bookItem.id).replace('/works/', '' ),
         author: bookItem.author ? bookItem.author[0] : 'author not found',
         publicationDate: bookItem.publicationDate ? bookItem.publicationDate : 'Date not found',
-        genre: bookItem.genre ? bookItem.genre[0] : "genre not found",
-        description: bookItem.description ? bookItem.description[5] : "description not found",
+        genre: bookItem.genre ? bookItem.genre[0] : "genre preview not found",
       };
     });
     console.log(booksItems)
@@ -88,7 +87,7 @@ export default function BooksTable() {
                       return (
                         <TableCell key={column.id} align={column.align}>
                           {column.id === 'title'
-                            ? <Link href={'#'}>{value}</Link>
+                            ? <Link href={`/works/${book.id}`}>{value}</Link>
                             : value}
                         </TableCell>
                       );

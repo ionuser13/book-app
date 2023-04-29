@@ -27,7 +27,6 @@ const AppProvider = ({children}) => {
                             author: author_name,
                             publicationDate: first_publish_year,
                             genre: subject,
-                            description: subject,
                         }
                     }
                 );
