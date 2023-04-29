@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import HomeIcon from "@mui/icons-material/Home";
+import Link from "next/link";
 
 const pages = ["Authors", "Genres"];
 const settings = [
@@ -48,7 +49,9 @@ const Header = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters={true}>
-          <HomeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Link href={'/'}>
+            <HomeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -81,8 +84,8 @@ const Header = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <a href={page}>{page}</a>
+                  <Typography textAlign="center" >
+                    <Link href={'/'} title="Coming soon">{page}</Link>
                   </Typography>
                 </MenuItem>
               ))}
@@ -121,7 +124,7 @@ const Header = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <a href={page}>{page}</a>
+                <Link href={'/'} title="Coming soon">{page}</Link>
               </Button>
             ))}
           </Box>
