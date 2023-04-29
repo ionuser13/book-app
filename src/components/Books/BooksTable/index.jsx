@@ -56,7 +56,6 @@ export default function BooksTable() {
         genre: bookItem.genre ? bookItem.genre[0] : "genre preview not found",
       };
     });
-    console.log(booksItems)
   
   return (
     <div className="w-full">

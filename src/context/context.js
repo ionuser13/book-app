@@ -16,7 +16,6 @@ const AppProvider = ({children}) => {
             const response = await fetch(`${API}${searchTerm}`);
             const data = await response.json();
             const {docs} = data;
-            console.log(docs)
             if(docs) {
                 const newBooks = docs.map(
                     (book) => {

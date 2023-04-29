@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import { useRouter } from 'next/router';
 import { Container } from '@mui/material';
 import Footer from '@/components/Footer';
