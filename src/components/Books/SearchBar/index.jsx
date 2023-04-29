@@ -2,13 +2,12 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import { Container } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import Autocomplete from "@mui/material/Autocomplete";
 import SearchIcon from "@mui/icons-material/Search";
 import { useGlobalContext } from "src/context/context";
-import { useRouter } from "next/router";
 
-export default function SearchBar({ list }) {
+export default function SearchBar() {
   const [searchedTerm, setSearchedTerm] = React.useState("");
+  
   const { setSearchTerm, setResultHeader } = useGlobalContext();
 
   const handleSearch = async () => {

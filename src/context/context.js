@@ -18,15 +18,16 @@ const AppProvider = ({children}) => {
             const {docs} = data;
             console.log(docs)
             if(docs) {
-                const newBooks = docs.slice(0, 20).map(
+                const newBooks = docs.map(
                     (book) => {
-                        const {key, author_name, first_publish_year, subject} =  book;
+                        const {key, author_name, first_publish_year, subject, title} =  book;
                         return {
-                            id: key || 'id not found',
-                            author: author_name || 'author not found',
-                            PublicationDate: first_publish_year || 'Date not found',
-                            genre: subject[0] ||'genre not found',
-                            description: subject[0] || 'description not available',
+                            id: key,
+                            title: title,
+                            author: author_name,
+                            publicationDate: first_publish_year,
+                            genre: subject,
+                            description: subject,
                         }
                     }
                 );
