@@ -60,7 +60,7 @@ export default function BooksTable() {
   
   return (
     <div className="w-full">
-      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+      <Paper sx={{ width: '100%', overflow: 'hidden' }} id="home">
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
